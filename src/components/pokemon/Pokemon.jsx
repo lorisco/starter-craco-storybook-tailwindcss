@@ -4,7 +4,7 @@ import cx from 'classnames';
 export const Pokemon = ({id, name, image, types, ...htmlCardElementProps }) => {
     htmlCardElementProps.className = cx(
         htmlCardElementProps?.className,
-        'bg-gray-100 rounded-md flex flex-col pb-4 shadow hover:shadow-lg relative m-2',
+        'bg-gray-100 rounded-md flex flex-col pb-4 shadow hover:shadow-lg relative',
     );
     return (
         <div {...htmlCardElementProps} style={{width:'300px'}}>
@@ -18,7 +18,7 @@ export const Pokemon = ({id, name, image, types, ...htmlCardElementProps }) => {
             <div>
                 <ul className={"flex flex-row justify-evenly justify-center"}>
                     {types.map(function(type, idx){
-                        return (<li className={"bg-green-500 rounded-full px-3 py-0.5 text-white text-sm italic justify-center align-middle"} key={idx}>{type.name}</li>)
+                        return (<li className={"bg-green-500 rounded-full px-3 py-0.5 text-white text-sm italic justify-center align-middle"} key={idx}>{type.type.name}</li>)
                     })}
                 </ul>
             </div>
